@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     
+    'polls.apps.PollsConfig',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+        # APP_DIRS设置为True之后，会在每个APP下寻找templates子目录
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
