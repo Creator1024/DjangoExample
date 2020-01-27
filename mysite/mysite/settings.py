@@ -56,7 +56,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         # APP_DIRS设置为True之后，会在每个APP下寻找templates子目录
         'APP_DIRS': True,
         'OPTIONS': {
