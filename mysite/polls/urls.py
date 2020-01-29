@@ -16,6 +16,11 @@ urlpatterns = [
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     path('<int:question_id>/vote/', views.vote, name='vote'),
+    path('<int:question_id>/vote/', views.vote, name='vote'),
+
+    # form test
+    path('your-name/', views.get_name, name='your-name'),
+    path('thanks/', views.thanks, name='thanks')
 ]
 
 
