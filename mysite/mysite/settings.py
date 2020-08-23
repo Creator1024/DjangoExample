@@ -25,28 +25,29 @@ SECRET_KEY = '*-sl_*5z^&04vt)ev$20hsggbv&s30)nl77vrv36!0k4x!s9j2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ '*',]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.auth',  # 包含身份认证 ( authentication ) 框架的核心，以及它的默认模型
+    'django.contrib.contenttypes',  # 是 Django 内容类型系统，它允许权限与您创建的模型相关联
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     
+    'rest_framework',
     'polls.apps.PollsConfig',
+    'pinfo',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',     # 管理跨请求的会话
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',      # 使用会话将用户与请求相关联
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -122,3 +123,6 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# APPEND_SLASH = False
